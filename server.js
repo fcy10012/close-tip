@@ -5,54 +5,106 @@ const PORT = 3001;
 app.get('/', (req, res) => {
   res.send(`
     <!DOCTYPE html>
-    <html lang="zh-CN">
-    <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <title>网站关闭提示</title>
-      <style>
-        html, body { height:100%; margin:0; padding:0; }
-        body {
-          min-height:100vh;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          background: linear-gradient(120deg,#eef2f3 0%, #8EC5FC 100%);
-          font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        }
-        .container {
-          background:rgba(255,255,255,0.85);
-          box-shadow:0 2px 20px rgba(100,150,200,0.13);
-          border-radius:16px;
-          padding:2em 2em 1.3em 2em;
-          max-width:360px;
-          width:90vw;
-          text-align:center;
-        }
-        h1 {
-          color:#3766bc;
-          font-size:1.8em;
-          margin:0 0 16px;
-        }
-        p {
-          color:#333;
-          font-size:1.18em;
-          margin:0;
-        }
-        @media (max-width:500px) {
-          h1 {font-size:1.26em;}
-          .container {padding:1.2em 0.3em 1em 0.3em;}
-        }
-      </style>
-    </head>
-    <body>
-      <div class="container">
-        <h1>本站点已经关闭</h1>
-        <p>6月份将会重新开启</p>
-      </div>
-    </body>
-    </html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>网站关闭提示</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(145deg, #d2e0f5 0%, #a6c1e6 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      padding: 1rem;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      border-radius: 32px;
+      box-shadow: 0 20px 40px rgba(0, 30, 60, 0.15);
+      padding: 2.5rem 2rem;
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.6);
+      border-radius: 50%;
+    }
+
+    svg {
+      width: 40px;
+      height: 40px;
+      stroke: #2b4f8c;
+      stroke-width: 1.8;
+      fill: none;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 500;
+      color: #1d3b6f;
+      margin-bottom: 8px;
+    }
+
+    .reopen {
+      font-size: 1.2rem;
+      color: #1d3b6f;
+      background: rgba(255, 255, 255, 0.6);
+      display: inline-block;
+      padding: 0.3rem 1.2rem;
+      border-radius: 40px;
+      margin: 12px 0 20px;
+    }
+
+    .data-note {
+      background: #e9f0fa;
+      border-radius: 24px;
+      padding: 0.9rem;
+      font-size: 1.1rem;
+      color: #1d3b6f;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+    }
+
+    @media (max-width: 480px) {
+      .card { padding: 2rem 1.2rem; }
+      h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 4h16v16H4z" stroke="currentColor" />
+        <path d="M8 4v4h8V4" stroke="currentColor" />
+        <circle cx="12" cy="14" r="2" stroke="currentColor" />
+        <path d="M6 18h12" stroke="currentColor" />
+      </svg>
+    </div>
+    <h1>本站点已经关闭</h1>
+    <div class="reopen">6月份将会重新开启</div>
+    <div class="data-note">用户数据已经保留</div>
+  </div>
+</body>
+</html>
   `);
 });
 
