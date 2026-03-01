@@ -1,12 +1,12 @@
 {
-  "name": "close-tip",
+  "name": "site-closed-notice",
   "version": "1.0.0",
+  "description": "网站关闭提示页面",
   "main": "server.js",
-  "license": "MIT",
-  "dependencies": {
-    "express": "^4.18.2"
-  },
   "scripts": {
     "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
   }
 }
